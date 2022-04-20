@@ -1326,6 +1326,19 @@ When they want to order a drink, we have to know their age because alcoholic bev
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CoffeeLiqueur"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
