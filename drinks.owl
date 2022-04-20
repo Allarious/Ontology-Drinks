@@ -1,0 +1,1451 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#"
+     xml:base="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#OrderTakenBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#OrderTakenBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Staff"/>
+        <rdfs:comment>When staff receives an order, we use this property to show that.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#OrderedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#OrderedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Customer"/>
+        <rdfs:comment>When a customer orders a drink, we use this property to show that.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SimilarDrink -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SimilarDrink">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:comment>We use this property to show similarity between drinks.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isBaseOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasIngredient">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isIngredientOf"/>
+        <rdfs:comment>This property is used to show the toppings and base of a drink.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isToppingOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Topping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isBaseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isBaseOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isIngredientOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:comment>This property shows the use cases of each topping and base.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isToppingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isToppingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Topping"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#DeliveryTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#DeliveryTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>This shows the time that the order is prepared and served.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Discount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Discount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>This property shows the amount of discount the customer gets.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#OrderTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#OrderTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>This property shows the time that the customer submitted the order.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Price">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>This property shows the amount of money that the customer must pay.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Tip -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Tip">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>This property shows the amount of tip that a customer wants to give.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasAge">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>This property shows the age of a person.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#AlcoholHeavy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#AlcoholHeavy">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>This class shows heavy alcoholic drinks for those who want more doses of alcohol.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#AlcoholoicDrink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#AlcoholoicDrink">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Natural"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class shows alcoholic drinks. They can be heavy or regular.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Americano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Americano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Angostura -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Angostura">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Artificial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Artificial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Topping"/>
+        <rdfs:comment>This class shows the processed toppings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bar">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#People"/>
+        <rdfs:comment>This class is the central part of ontology. It has drinks, and drinks consist of bases and toppings. As a transitive property, the drinks also have the raw material since the base has raw material. The customers choose their drinks from the drink class, a subclass of this class.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bar"/>
+        <rdfs:comment>This class is the most fundamental part of a drink. They form the taste of a drink.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bellini -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bellini">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Wine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Benedictine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Benedictine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bicerin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bicerin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Chocolate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhippedCream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlackChocolate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlackChocolate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Chocolate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlackRum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlackRum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Rum"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhiteRum"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BloodyMary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BloodyMary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlueCuracao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlueCuracao">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlueLagoon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlueLagoon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlueCuracao"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bourbon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bourbon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cappocino -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cappocino">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#MilkFoam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SteamedMilk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CappucinoFreddo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CappucinoFreddo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cappocino"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Freddo"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Ice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#MilkFoam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CaramelFrape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CaramelFrape">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Frape"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Ice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Syrup"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhippedCream"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CerryHeering -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CerryHeering">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Chocolate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Chocolate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base"/>
+        <rdfs:comment>Some of the coffees have chocolate as their essential parts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#ChocolateBased -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#ChocolateBased">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Chocolate"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>This class shows chocolate-based drinks. They are usually coffees with chocolate as a base.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Coffee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Coffee">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Artificial"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class shows the coffees that must have espresso as their base.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CoffeeLiqueur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CoffeeLiqueur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cognac -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cognac">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cointreau -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cointreau">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CondensedMilk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CondensedMilk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Milk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Correto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Correto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cosmopolitan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cosmopolitan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cream -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cream">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Artificial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Customer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Customer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#People"/>
+        <rdfs:comment>The customer is the person who goes to the bar and gets service from the staff. Also, they order drinks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bar"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class shows the recipes for different drinks. When someone wants to order a drink, they must choose from this list.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#RawMaterial"/>
+        <rdfs:comment>This is the raw material that is used for coffees. Since it is also the base part of the coffees, this class can be seen as the subclass of both RawMaterial and Base.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoCoffee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoCoffee">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Water"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoLaccino -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoLaccino">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Ice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Ethanol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Ethanol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#RawMaterial"/>
+        <rdfs:comment>This is the raw material that is used for alcoholic drinks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Frape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Frape">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SteamedMilk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#IceCream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Freddo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Freddo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhippedCream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Fruits -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Fruits">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Natural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Gin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Gin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#HotChocolate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#HotChocolate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Chocolate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Chocolate"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Milk"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Ice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Ice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#IceCream -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#IceCream">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Artificial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Juice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Juice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Natural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Latte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Latte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SteamedMilk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#MilkFoam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#LatteMachiato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#LatteMachiato">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Latte"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Macchiato"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhippedCream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Lemon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Lemon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Fruits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Ethanol"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>We can generate different bases from ethanol, which is the fundamental part of alcoholic drinks. All of these bases are listed as the subclass of this class.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Macchiato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Macchiato">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#MilkFoam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#MaiTai -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#MaiTai">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhiteRum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Manhattan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Manhattan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Whiskey"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Margarita -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Margarita">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Tequila"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Marrochino -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Marrochino">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlackChocolate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#MilkFoam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Martini -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Martini">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Milk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base"/>
+        <rdfs:comment>Some of the coffees have milk as their essential parts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#MilkFoam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#MilkFoam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Artificial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Mocha -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Mocha">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#BlackChocolate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SteamedMilk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhippedCream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Mojito -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Mojito">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Rum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Natural -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Natural">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Topping"/>
+        <rdfs:comment>This class shows the natural toppings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#OldFashioned -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#OldFashioned">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bourbon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Angostura"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#OrderedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>When someone goes to the bar, they order some drinks. The ordered drinks are submitted in order. This order must have some drinks, the value of the tip, the value of the discount, the time that the order is submitted, and the time that the order is delivered to the customer</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#PeachSchnapps -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#PeachSchnapps">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#People -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#People">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasAge"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class consists of two subclasses:
+1- Staff
+2- Customer
+Staff is the people who work at the bar and serves service to customers. They also submit the orders. Customers order different kinds of drinks and get assistance from the staff.
+When they want to order a drink, we have to know their age because alcoholic beverages are only served to those who are more than 18 years old. So, they should have a property called hasAge.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#PowderedChocolate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#PowderedChocolate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Artificial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#RawMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#RawMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bar"/>
+        <rdfs:comment>The raw material is the most fundamental part of the drinks. Alcoholic drinks have ethanol as their raw material, and coffees have espresso as their raw material.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Romano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Romano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#EspressoBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasTopping"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Lemon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Rum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Rum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SexOnTheBeach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SexOnTheBeach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#PeachSchnapps"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Sidecar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Sidecar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cognac"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SingaporeSling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SingaporeSling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Gin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Staff -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Staff">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#People"/>
+        <rdfs:comment>The staff is the person who works at the bar. Customers go to them and order drinks, and they submit their orders.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SteamedMilk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#SteamedMilk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Milk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Syrup -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Syrup">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Artificial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Tequila -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Tequila">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#TomCollins -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#TomCollins">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Gin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bar"/>
+        <rdfs:comment>Toppings are not the fundamental parts of drinks but make them tastier—they can be natural and artificial.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vermouth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vermouth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Base"/>
+        <rdfs:comment>Most of the coffees have water as their essential parts. Water can be in the form of liquid or ice.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhaiteRassian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhaiteRassian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Drink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#CoffeeLiqueur"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhippedCream -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhippedCream">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cream"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Whiskey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Whiskey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhiteChocolate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhiteChocolate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Chocolate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhiteRum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#WhiteRum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Rum"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Liqueur"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#John -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#John">
+        <rdf:type rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#People"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</hasAge>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Melina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Melina">
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</hasAge>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Order"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Tom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Tom">
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</hasAge>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Bourbon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Cognac"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Gin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Rum"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Tequila"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Vodka"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Whiskey"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/allarious/ontologies/2022/3/untitled-ontology-11#Wine"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
